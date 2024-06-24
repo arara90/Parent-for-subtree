@@ -3,9 +3,14 @@ import { UpdatePhone } from '../../subtree-types/user-service/interface/update-p
 
 @Injectable()
 export class ParentUserService {
-
   async updatePhone(opt: UpdatePhone) {
-    console.log(opt)
+    const user = {
+      user_id: opt.user_id,
+      name: 'test-user',
+      phone: '12341234'
+    }
+
+    console.log(`update ${opt.user_id}'s phone number: ${user.phone} => ${opt.phone}`)
     return 'done'
   }
 }
